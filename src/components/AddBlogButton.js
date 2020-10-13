@@ -11,7 +11,7 @@ const AddBlogButton = ({}) => {
         onPress={() => navigation.navigate("Create")}
         style={styles.btnAdd}
       >
-        <Feather name="plus" size={30} color="white" />
+        <Feather name="plus" size={25} color="white" />
       </TouchableOpacity>
     </View>
   );
@@ -19,10 +19,10 @@ const AddBlogButton = ({}) => {
 
 const styles = StyleSheet.create({
   btnAdd: {
-    marginRight: 10,
-    backgroundColor: "blue",
-    borderRadius: 20,
-    padding: 5,
+    marginRight: 18,
+    backgroundColor: "lightgray",
+    borderRadius: 5,
+    padding: 2,
   },
 });
 

@@ -1,10 +1,13 @@
 import React, { useContext, useState } from "react";
 import { View, Text, StyleSheet, TextInput, Button } from "react-native";
 import { Context } from "../context/BlogContext";
+import { useNavigation } from "@react-navigation/native";
 
 const CreateScreen = () => {
+  const navigation = useNavigation();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const { addBlogPost } = useContext(Context);
 
   return (
     <View>
@@ -20,7 +23,14 @@ const CreateScreen = () => {
         value={content}
         onChangeText={(text) => setContent(text)}
       />
-      <Button title="Add Blog Post" />
+      <Button
+        title="Add Blog Post"
+        onPress={() => {
+          addBlogPost(title, content, () => {
+            navigation.navigate("Blogs");
+          });
+        }}
+      />
     </View>
   );
 };
