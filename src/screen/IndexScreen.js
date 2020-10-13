@@ -39,12 +39,19 @@ const IndexScreen = ({ navigation }) => {
     </>
   );
 };
+//Doesnt work this is navigation 4.0
+IndexScreen.navigationOptions = () => {
+  return {
+    headerRight: <Feather name="plus" size={30} />,
+  };
+};
 
 const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
     justifyContent: "space-between",
     paddingVertical: 20,
+    padding: 20,
     borderTopWidth: 1,
     borderColor: "gray",
   },
