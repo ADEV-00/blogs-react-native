@@ -6,6 +6,8 @@ import { Provider } from "./src/context/BlogContext";
 import ShowScreen from "./src/screen/showScreen";
 import CreateScreen from "./src/screen/createScreen";
 import AddBlogButton from "./src/components/AddBlogButton";
+import EditBlogButton from "./src/components/EditBlogButton";
+import EditScreen from "./src/screen/editScreen";
 
 const Stack = createStackNavigator();
 
@@ -22,8 +24,15 @@ const App = () => (
           ),
         }}
       />
-      <Stack.Screen name="Show" component={ShowScreen} />
+      <Stack.Screen
+        name="Show"
+        component={ShowScreen}
+        options={{
+          headerRight: () => <EditBlogButton />,
+        }}
+      />
       <Stack.Screen name="Create" component={CreateScreen} />
+      <Stack.Screen name="Edit" component={EditScreen} />
     </Stack.Navigator>
   </NavigationContainer>
 );
