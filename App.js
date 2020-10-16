@@ -7,7 +7,7 @@ import ShowScreen from "./src/screen/showScreen";
 import CreateScreen from "./src/screen/createScreen";
 import AddBlogButton from "./src/components/AddBlogButton";
 import EditBlogButton from "./src/components/EditBlogButton";
-import EditScreen from "./src/screen/editScreen";
+import EditScreen from "./src/screen/EditScreen";
 
 const Stack = createStackNavigator();
 
