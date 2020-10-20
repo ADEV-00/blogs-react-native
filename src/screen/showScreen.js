@@ -8,13 +8,27 @@ const ShowScreen = ({ navigation, route }) => {
   const blogPost = state.find((blogPost) => blogPost.id === route.params?.id);
 
   return (
-    <View>
-      <Text>{blogPost.title}</Text>
-      <Text>{blogPost.content}</Text>
+    <View style={styles.blogWrapper}>
+      <Text style={styles.blogTitle}>{blogPost.title}</Text>
+      <Text style={styles.blogContent}>{blogPost.content}</Text>
     </View>
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  blogTitle: {
+    fontSize: 32,
+    fontWeight: "bold",
+    margin: 10,
+    borderBottomWidth: 2,
+    borderColor: "gray",
+    paddingBottom: 5,
+  },
+  blogContent: {
+    fontSize: 20,
+    margin: 10,
+    lineHeight: 30,
+  },
+});
 
 export default ShowScreen;
