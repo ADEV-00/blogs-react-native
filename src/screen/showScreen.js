@@ -11,6 +11,7 @@ const ShowScreen = ({ navigation, route }) => {
     <View style={styles.blogWrapper}>
       <Text style={styles.blogTitle}>{blogPost.title}</Text>
       <Text style={styles.blogContent}>{blogPost.content}</Text>
+      <Text>{blogPost.uploadedAt}</Text>
     </View>
   );
 };

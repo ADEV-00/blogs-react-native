@@ -1,6 +1,11 @@
 import createDataContext from "./createDataContext";
 import jsonServer from "../api/jsonServer";
 
+const handleDateTime = () => {
+  const getDate = new Date();
+  return `${getDate.getDate()}.${getDate.getMonth()}.${getDate.getFullYear()} ${getDate.getHours()}:${getDate.getMinutes()}`;
+};
+
 const blogReducer = (state, action) => {
   switch (action.type) {
     case "get_blogposts":
@@ -25,7 +30,11 @@ const getBlogPosts = (dispatch) => {
 
 const addBlogPost = (dispatch) => {
   return async (title, content, callback) => {
-    await jsonServer.post("/blogposts", { title, content });
+    await jsonServer.post("/blogposts", {
+      title,
+      content,
+      uploadedAt: handleDateTime(),
+    });
     if (callback) {
       callback();
     }
