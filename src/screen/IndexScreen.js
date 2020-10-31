@@ -63,17 +63,36 @@ IndexScreen.navigationOptions = () => {
 const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
+    backgroundColor: "white",
+    width: 300,
+    height: 100,
     justifyContent: "space-between",
     paddingVertical: 20,
     padding: 20,
-    borderTopWidth: 1,
-    borderColor: "gray",
+    borderTopWidth: 10,
+    borderColor: "#00F260",
+    alignSelf: "center",
+    borderRadius: 10,
+    marginVertical: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 5.68,
+
+    elevation: 11,
   },
   title: {
+    alignSelf: "center",
     fontSize: 18,
     fontWeight: "bold",
+    overflow: "hidden",
+    width: 200,
   },
   icon: {
+    marginTop: 10,
     fontSize: 24,
   },
 });
